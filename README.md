@@ -44,7 +44,7 @@ Ensure that if output is requested multiple times then different `hostname` is r
 Check Prometheus metrics of balancer:
 
 ```bash
-curl -s http://localhost:81
+curl -s http://localhost:81/metrics
 ```
 
 Output of balancer Prometheus endpoint should look like:
@@ -71,6 +71,23 @@ angie_http_upstreams_peers_health_downtime{upstream="backend",peer="172.18.0.3:8
 angie_http_upstreams_peers_health_downtime{upstream="backend",peer="172.18.0.4:8080"} 0
 angie_http_upstreams_keepalive{upstream="backend"} 0
 ...
+```
+
+Check API  of balancer:
+
+```bash
+curl -s http://localhost:81/api/status/angie
+```
+
+Output of balancer API endpoint should look like:
+
+```json
+{
+	"version": "1.8.1",
+	"address": "172.18.0.3",
+	"generation": 1,
+	"load_time": "2025-01-09T20:38:18.767Z"
+}
 ```
 
 Stop containers:
