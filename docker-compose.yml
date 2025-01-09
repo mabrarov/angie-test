@@ -1,0 +1,21 @@
+version: "2.0"
+
+# noinspection ComposeUnknownKeys
+x-logging: &default-logging
+  driver: "json-file"
+  options:
+    max-size: "12m"
+    max-file: "5"
+
+services:
+  balancer:
+    build: "balancer"
+    image: "abrarov/angie-test-balancer"
+    ports:
+    - "80:8080"
+    logging: *default-logging
+
+  backend:
+    build: "backend"
+    image: "abrarov/angie-test-backend"
+    logging: *default-logging
