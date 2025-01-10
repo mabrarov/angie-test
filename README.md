@@ -11,12 +11,6 @@ Start containers:
 docker-compose up -d
 ```
 
-Add one more backend server:
-
-```bash
-docker-compose up -d --scale backend=2 --no-recreate
-```
-
 Check output of balancer:
 
 ```bash
