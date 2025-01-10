@@ -4,13 +4,13 @@ Prerequisites:
 
 1. Docker 20+
 1. [Docker Compose](https://docs.docker.com/compose/):
-    * [Docker Compose standalone](https://docs.docker.com/compose/install/standalone/) 2+ (this README commands use Docker Compose standalone syntax) or
-    * [Docker Compose plugin](https://docs.docker.com/compose/install/linux/)
+    * [Docker Compose standalone](https://docs.docker.com/compose/install/standalone/) 2+ or
+    * [Docker Compose plugin](https://docs.docker.com/compose/install/linux/) (this README commands use Docker Compose plugin syntax)
 
 Start containers:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 Check output of balancer:
@@ -89,13 +89,13 @@ Output of balancer API endpoint should look like:
 Stop containers:
 
 ```bash
-docker-compose stop
+docker compose stop
 ```
 
 Cleanup:
 
 ```bash
-docker-compose down -v -t 0 && \
+docker compose down -v -t 0 && \
 docker rmi -f abrarov/angie-test-backend && \
 docker rmi -f abrarov/angie-test-balancer
 ```
