@@ -1,5 +1,3 @@
-version: "2.0"
-
 # noinspection ComposeUnknownKeys
 x-logging: &default-logging
   driver: "json-file"
@@ -19,4 +17,7 @@ services:
   backend:
     build: "backend"
     image: "abrarov/angie-test-backend"
+    deploy:
+      mode: "replicated"
+      replicas: 3
     logging: *default-logging
