@@ -2,8 +2,10 @@
 
 Prerequisites:
 
-1. Docker 1.12.3+
-1. Docker Compose
+1. Docker 20+
+1. [Docker Compose](https://docs.docker.com/compose/):
+    * [Docker Compose standalone](https://docs.docker.com/compose/install/standalone/) 2+ (this README commands use Docker Compose standalone syntax) or
+    * [Docker Compose plugin](https://docs.docker.com/compose/install/linux/)
 
 Start containers:
 
