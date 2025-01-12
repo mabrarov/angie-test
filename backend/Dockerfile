@@ -1,5 +1,4 @@
-FROM nginx:alpine
+FROM docker.angie.software/angie
 
-COPY nginx.conf /etc/nginx/
-COPY http.js /etc/nginx/
-
+COPY angie.conf /etc/angie/angie.conf
+COPY http.js /etc/angie/
