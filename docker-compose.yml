@@ -13,10 +13,14 @@ services:
       - "81:8081"
     logging: *default-logging
 
-  backend:
+  backend-1:
     build: "backend"
     image: "abrarov/angie-test-backend"
-    deploy:
-      mode: "replicated"
-      replicas: 3
+    hostname: "backend-1"
+    logging: *default-logging
+
+  backend-2:
+    build: "backend"
+    image: "abrarov/angie-test-backend"
+    hostname: "backend-2"
     logging: *default-logging
